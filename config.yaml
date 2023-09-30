@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mongo-config
+  name: config
 data:
+  api-url: http://api-service:5000
   mongo-url: mongo-service

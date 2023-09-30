@@ -9,8 +9,7 @@ data = json.loads(out)
 for item in data["items"]:
 	if item["kind"] != "Pod": continue
 	status = item["status"]
-	print(f"* app: {item['metadata']['labels']['app']}")
+	print(f"* app: {item['metadata']['labels']['app']}, phase {status['phase']}, started {status['startTime']}")
 	for cstat in status["containerStatuses"]:
-		# TODO status: running/terminating etc
 		print(f"  image: {cstat['image']}")
 		print(f"  image id: {cstat['imageID']}")

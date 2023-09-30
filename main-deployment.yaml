@@ -27,9 +27,13 @@ spec:
         env:
         - name: API_URL
           valueFrom:
-            configMapKeyRef:  # FIXME!
-              name: mongo-config
-              key: mongo-url
+            configMapKeyRef:
+              name: config
+              key: api-url
+        - name: FLASK_ENV
+          # FIXME this is problematic. Changing/removing this var will not
+          # result in a restart when running kubectl apply
+          value: development
 ---
 apiVersion: v1
 kind: Service
