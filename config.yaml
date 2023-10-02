@@ -4,4 +4,4 @@ metadata:
   name: config
 data:
   api-url: http://api-service:5000
-  mongo-url: mongo-service
+  mongo-host: mongo-service
